@@ -1,7 +1,9 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-frontend/node_modules
+frontend/node_modules/
+frontend/cw2/node_modules/
+frontend/cw2/node_modules/*
 frontend/cw2/.pnp
 frontend/cw2/.pnp.js
 
@@ -21,3 +23,7 @@ frontend/cw2/.pnp.js
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+frontend/cw2/node_modules/.cache/babel-loader/0d1bdd5217621e4f8a4a9c878aa523c26dce934d276bbb6a090e8132d976351c.json
+frontend/cw2/node_modules/.cache/babel-loader/0e5bfdcab73a5d7ed1be7aedb4c0818f01da1f3d70e438c1e00266f39e6a01b8.json
+frontend/cw2/node_modules/.cache/babel-loader/0f0ff069524ba923f895ac760018672dd8d487d398b6aecc431b05911e7dff7a.json
+frontend/cw2/node_modules/.cache/babel-loader/1bd910675dc8bac4cedb8afcdeb0542acb4d981be8545b916e4b66368c457b5f.json
