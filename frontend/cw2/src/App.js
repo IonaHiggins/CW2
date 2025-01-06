@@ -8,6 +8,7 @@ import Talk from './components/talk';
 import DisplayASessions from './components/displayASessions';
 import DisplayBSessions from './components/displayBSessions';
 import DisplayCSessions from './components/displayCSessions';
+import Speaker from './components/speaker';
 
 function App(){
   return(
@@ -24,6 +25,7 @@ function App(){
               <Route path = "c" element = {<DisplayCSessions/>}/>
               <Route path = "programme" element={<DisplayProgramme />} />
               <Route path = "talk" element={<Talk />} />
+              <Route path = "test" elemnt = {<Speaker/>}/>
             </Routes>
           </BrowserRouter>
         </div>
