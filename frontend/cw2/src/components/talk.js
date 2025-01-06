@@ -1,5 +1,6 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
+import Stars from './stars';
 const Talk = ({talk}) =>{
 
     return(
@@ -8,6 +9,7 @@ const Talk = ({talk}) =>{
                 <Accordion.Item>
                     <p>{talk.speaker}</p>
                     <p>{talk.description}</p>
+                    <Stars position={talk.id}/>
                 </Accordion.Item>
         </div>
     );
