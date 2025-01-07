@@ -1,5 +1,6 @@
 import React from 'react'
-import DisplayTalks from './displayTalks';
+import DisplayTalks from '../displayTalks/displayTalks';
+
 
 function GetSessions({details,sessionType}){
     if (sessionType === 'a'){

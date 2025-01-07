@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import DisplayTalks from "./displayTalks";
+import DisplayTalks from "./displayTalks/displayTalks";
 
 function Search({details}) {
     const[searchField,setSearchField] = useState("");

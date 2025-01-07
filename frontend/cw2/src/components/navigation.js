@@ -16,14 +16,8 @@ const Navigation = () =>{
                     <Nav.Link as={Link} to="Programme">
                         Programme
                     </Nav.Link>
-                    <Nav.Link as={Link} to="order">
-                        Order
-                    </Nav.Link>
-                    <Nav.Link as={Link} to ="contactUs">
-                        Contact Us
-                    </Nav.Link>
                     <Nav.Link as={Link} to = "My Itinerary">
-                        Staff Login
+                       My Itinerary
                     </Nav.Link>
                 </Nav>
                 </Navbar.Collapse>

@@ -1,16 +1,16 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import Stars from './stars';
+import Stars from '../stars';
 const Talk = ({talk}) =>{
 
     return(
         <div>
-            <Accordion.Header eventKey={talk.id} key={Talk}><h3>Session: </h3>{talk.session}</Accordion.Header>
-                <Accordion.Item>
+            <Accordion.Header eventKey={talk.id} key={Talk}></Accordion.Header>
+                <Accordion.Body>
                     <p>{talk.speaker}</p>
                     <p>{talk.description}</p>
                     <Stars position={talk.id}/>
-                </Accordion.Item>
+                </Accordion.Body>
         </div>
     );
 };
