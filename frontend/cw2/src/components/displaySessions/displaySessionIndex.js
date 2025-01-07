@@ -1,9 +1,6 @@
 import React from "react";
-import Image from 'react-bootstrap/Image';
-import GetSessions from "./getSessions";
-import useFetchData from "../useFetchData";
 import Navigate from "../handleClick";
-import DisplayASessions from "./displayASessions";
+
 const DisplaySessions = ()=>{
 
     return(
