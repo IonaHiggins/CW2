@@ -1,18 +1,13 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-
-const DetailedTalk = ({talk}) =>{
-    const {talkId} = useParams();
-    const currentItem = talk.filter((entry)=>{
-        return entry.id === talkId;
-    });
-    const {description, speaker} = currentItem[0];
-    return(
-        <>
-            <h4>Staff Member: {description}</h4>
-            <p>{speaker}</p>
-        </>
-    );
+import useFetchData from '../useFetchData';
+import GetTalk  from './getTalk';
+const DetailedTalk = () =>{
+    const { status, talks } = useFetchData();
+    if (status === "fetched"){
+        return(
+            <GetTalk details = {talks} talkID={'1'}/>
+        )
+    }
 };
 
 export default DetailedTalk;

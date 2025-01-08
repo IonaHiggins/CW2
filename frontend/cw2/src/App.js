@@ -8,6 +8,7 @@ import DisplaySessions from './components/displaySessions/displaySessionIndex';
 import DisplayASessions from './components/displaySessions/displayASessions';
 import DisplayBSessions from './components/displaySessions/displayBSessions';
 import DisplayCSessions from './components/displaySessions/displayCSessions';
+import DetailedTalk from './components/displayTalks/detailedTalk';
 
 function App(){
   return(
@@ -22,8 +23,9 @@ function App(){
               <Route path = "aSessions" element={<DisplayASessions/>}/>
               <Route path = "bSessions" element={<DisplayBSessions/>}/>
               <Route path = "cSessions" element={<DisplayCSessions/>}/>
+              <Route path = "sessions" element = {<DisplaySessions/>}/>
               <Route path = "programme" element={<DisplayProgramme />} />
-              <Route path = "test" element = {<DisplaySessions/>}/>
+              <Route path = "test" element = {<DetailedTalk/>}/>
             </Routes>
           </BrowserRouter>
         </div>
