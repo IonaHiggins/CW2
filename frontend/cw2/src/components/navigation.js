@@ -13,14 +13,17 @@ const Navigation = () =>{
                     <Nav.Link as={Link} to="/">
                         Home
                     </Nav.Link>
-                    <Nav.Link as={Link} to="Programme">
+                    <Nav.Link as={Link} to="programme">
                         Programme
                     </Nav.Link>
                     <Nav.Link as={Link} to="sessions">
                         Sessions
                     </Nav.Link>
-                    <Nav.Link as={Link} to = "Itinerary">
+                    <Nav.Link as={Link} to = "itinerary">
                        My Itinerary
+                    </Nav.Link>
+                    <Nav.Link as={Link} to = "profile">
+                       My Profile
                     </Nav.Link>
                 </Nav>
                 </Navbar.Collapse>

@@ -9,7 +9,7 @@ export default function GetLikes({details}) {
     return (
 
       <div>
-        <h2>My Itinerary:</h2>
+        <h2>My Likes:</h2>
         {talkDetails.length > 0 ? (
             
         <ul>

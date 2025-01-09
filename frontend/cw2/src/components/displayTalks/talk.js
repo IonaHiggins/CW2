@@ -1,6 +1,6 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import Stars from '../stars';
+import Stars from '../ratings/stars';
 import Navigate from '../handleClick';
 import Interest from '../interests/interest';
 import Like from '../likes/likes';
@@ -26,7 +26,7 @@ const Talk = ({talk}) =>{
                 </InterestTalkProvider>
                 <ItineraryTalkProvider>
                     <div>
-                    <Itinerary talkId = {talk.id}/>
+                    <Itinerary talkId = {talk.id} talkSession = {talk.session}/>
 
                     </div>
                 </ItineraryTalkProvider>

@@ -1,5 +1,5 @@
-import Star from "./star";
-import { useLocalStorage } from "./useLocalStorage.js";
+import Star from "./star.js";
+import { useLocalStorage } from "../useLocalStorage.js";
 
 export default function StarRating({ position, totalStars = 5 }) {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import Stars from '../stars';
+import Stars from '../ratings/stars';
 const Talk = ({talk}) =>{
 
     return(

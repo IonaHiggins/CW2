@@ -14,6 +14,7 @@ import { InterestTalkProvider } from './components/interests/interestContext';
 import DisplayInterests from './components/interests/displayInterests';
 import { LikedTalkProvider } from './components/likes/likesContext';
 import DisplayLikes from './components/likes/displayLikes';
+import DisplayProfile from './components/userProfile';
 
 function App(){
   return(
@@ -35,6 +36,7 @@ function App(){
               <Route path = "itinerary" element = {<DisplayItinerary/>}/>
               <Route path = "interests" element = {<DisplayInterests/>}/>
               <Route path = "likes" element = {<DisplayLikes/>}/>
+              <Route path = "profile" element = {<DisplayProfile/>}/>
               <Route path = "test" element = {<DisplayItinerary/>}/>
             </Routes>
           </BrowserRouter>

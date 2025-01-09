@@ -9,7 +9,7 @@ export default function GetInterests({details}) {
     return (
 
       <div>
-        <h2>My Itinerary:</h2>
+        <h2>My Interests:</h2>
         {talkDetails.length > 0 ? (
             
         <ul>
