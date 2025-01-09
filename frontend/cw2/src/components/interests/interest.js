@@ -1,9 +1,9 @@
 import React from "react";
 import { HiOutlineLightBulb } from "react-icons/hi2";
 import { useLocalStorage } from "../useLocalStorage";
-export default function Interest(position) {
-      let onOff = JSON.stringify(position);
-      const [selectedInterest, setSelectedInterest] = useLocalStorage(onOff, false);
+export default function Interest(interest) {
+      let interested = JSON.stringify(interest);
+      const [selectedInterest, setSelectedInterest] = useLocalStorage(interested, false);
       const setInterest=()=>{
             setSelectedInterest(!selectedInterest);
       }
