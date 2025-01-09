@@ -8,13 +8,20 @@ import DisplaySessions from './components/displaySessions/displaySessionIndex';
 import DisplayASessions from './components/displaySessions/displayASessions';
 import DisplayBSessions from './components/displaySessions/displayBSessions';
 import DisplayCSessions from './components/displaySessions/displayCSessions';
-import DetailedTalk from './components/displayTalks/detailedTalk';
+import { ItineraryTalkProvider } from './components/itinerary/itineraryContext';
+import DisplayItinerary from './components/itinerary/displayItinerary';
+import { InterestTalkProvider } from './components/interests/interestContext';
+import DisplayInterests from './components/interests/displayInterests';
+import { LikedTalkProvider } from './components/likes/likesContext';
+import DisplayLikes from './components/likes/displayLikes';
 
 function App(){
   return(
     <>
       <div className="wrapper">
-
+      <ItineraryTalkProvider>
+       <InterestTalkProvider>
+        <LikedTalkProvider>
         <BrowserRouter>
           <Navigation/>
             <Routes>
@@ -25,9 +32,15 @@ function App(){
               <Route path = "cSessions" element={<DisplayCSessions/>}/>
               <Route path = "sessions" element = {<DisplaySessions/>}/>
               <Route path = "programme" element={<DisplayProgramme />} />
-              <Route path = "test" element = {<DetailedTalk/>}/>
+              <Route path = "itinerary" element = {<DisplayItinerary/>}/>
+              <Route path = "interests" element = {<DisplayInterests/>}/>
+              <Route path = "likes" element = {<DisplayLikes/>}/>
+              <Route path = "test" element = {<DisplayItinerary/>}/>
             </Routes>
           </BrowserRouter>
+          </LikedTalkProvider>
+          </InterestTalkProvider>
+          </ItineraryTalkProvider>
         </div>
       </>
   );

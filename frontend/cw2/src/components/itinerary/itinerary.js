@@ -1,16 +1,15 @@
-import React from "react";
-import { useLocalStorage } from "../useLocalStorage";
-import { FaRegRectangleList } from "react-icons/fa6";
-import { FaRectangleList } from "react-icons/fa6";
-export default function Itinerary(itinerary) {
-      let onItinerary = JSON.stringify(itinerary);
-      const [itineraryTalk , setItineraryTalk] = useLocalStorage(onItinerary, false);
-      const setItinerary=()=>{
-            setItineraryTalk(!itineraryTalk);
-      }
- return(
-      <div onClick = {setItinerary}>
-            {itineraryTalk ? <FaRectangleList/>: <FaRegRectangleList/> }
-      </div>
- )
+import React from 'react';
+import { useItinerary } from './itineraryContext';
+import { FaRegRectangleList, FaRectangleList } from 'react-icons/fa6';
+
+export default function Itinerary({ talkId }) {
+  const { itineraryTalk, toggleItineraryTalk } = useItinerary();
+
+  const inItinerary = itineraryTalk.includes(talkId);
+
+  return (
+    <div onClick={() => toggleItineraryTalk(talkId)}>
+      {inItinerary ? <FaRectangleList /> : <FaRegRectangleList />}
+    </div>
+  );
 }
