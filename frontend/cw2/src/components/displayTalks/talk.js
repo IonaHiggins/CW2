@@ -5,31 +5,28 @@ import Navigate from '../handleClick';
 import Interest from '../interests/interest';
 import Like from '../likes/likes';
 import Itinerary from '../itinerary/itinerary';
-import { ItineraryTalkProvider } from '../itinerary/itineraryContext';
-import { InterestTalkProvider } from '../interests/interestContext';
+
 const Talk = ({talk}) =>{
 
     return(
         <div>
              <Accordion.Item>
-                <p>{talk.speaker}</p>
+                <h2>{talk.title}</h2>
+                <h5>Session {talk.session}- {talk.speaker}</h5>
                 <p>{talk.description}</p>
-                <Stars position={talk.id}/>
-
                 <div>
-                <Interest talkId = {talk.id}/>
+                    <h6>Your Rating:</h6> 
+                    <Stars position={talk.id}/>
                 </div>
-                <InterestTalkProvider>
-                    <div>
+                <div>
+                    <Interest talkId = {talk.id}/>
+                </div>
+                <div>
                     <Like talkId = {talk.id}/>
-                    </div>
-                </InterestTalkProvider>
-                <ItineraryTalkProvider>
-                    <div>
-                    <Itinerary talkId = {talk.id} talkSession = {talk.session}/>
-
-                    </div>
-                </ItineraryTalkProvider>
+                </div>
+                <div> 
+                    <Itinerary talkId={talk.id}/>
+                </div>
                 <Navigate route = {talk.id} text = {"Learn More"}/>
              </Accordion.Item>
         </div>

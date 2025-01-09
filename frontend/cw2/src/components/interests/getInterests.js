@@ -13,12 +13,12 @@ export default function GetInterests({details}) {
         {talkDetails.length > 0 ? (
             
         <ul>
-          {talkDetails.map((talk) => (<li key={talk.id}><h3>{talk.title}</h3><p>{talk.description}</p></li>
+          {talkDetails.map((talk) => (<li key={talk.id}><h3>{talk.title}</h3><h5>Session {talk.session} - {talk.speaker}</h5><p>{talk.description}</p><hr></hr></li>
           ))}
         </ul>
         ) : (
             <div>
-        <p> You currently have no talks liked! Explore our talks and click the icon '<HiOutlineLightBulb/>'to add a talk to your schedule.</p></div>
+        <p> You currently have no talks marked as interested! Explore our talks and click the icon '<HiOutlineLightBulb/>'to add mark it as 'interested'.</p></div>
         )}
       </div>
     );

@@ -18,9 +18,7 @@ export default function StarRating({ position, totalStars = 5 }) {
           onSelect={() => setSelectedStars(i + 1)}
         />
       ))}
-      <p>
-        {selectedStars} of {totalStars} are selected.
-      </p>
+    
     </div>
   );
 }
