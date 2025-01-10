@@ -1,29 +1,27 @@
-import React, {useContext, useState} from 'react';
-import ReviewContext from './submitReview';
-const SubmitReview = () =>{
-    const [review, setReview] = useContext(ReviewContext);
-    const [nameField, setNameField] = useState("");
-    const [reviewField, setReviewField] = useState("");
-    const [message, setMessage] = useState("");
+import React,{ useState, useContext } from "react"
+import { useReview} from "./reviewContext"
 
-    const addReview = () =>{
-        let newReview = [nameField, reviewField, ...order];
+const SubmitReview=()=>{
+    const [review, setReview] = useContext(ReviewContext);
+
+    const addReview = () => {
+        let newReview = [nameField, reviewField, ...review
         const reviewString = JSON.stringify(newReview);
-        fetch(`http://localhost:3001/addReview`, {
+        fetch(`http://localhost:3001/addOrder`, {
           method: "POST",
           headers: {
             Accept: "application/json, text/plain, */*     ",
             "Content-Type": "application/json",
           },
-          body: orderString,
+          body: reviewString,
         })
         .then(() => {
             setMessage(
               "Hi " +
                 nameField +
-                " thank you for reviewing this talk."
+                " thank you for reviewing " +talkId+" ."
             );
-            setOrder([]);
+            setReview([]);
             setNameField("");
             setReviewField("");
           })
@@ -33,8 +31,8 @@ const SubmitReview = () =>{
       };
       return (
         <div>
-            <h2>Review Talk</h2>
-            <label> Enter your name:</label>
+            <h2>Submit Review</h2>
+            <label> Name:</label>
             <input
             className="form-control"
             type="text"
@@ -42,15 +40,15 @@ const SubmitReview = () =>{
             value={nameField}
             onChange={(e) => setNameField(e.target.value)}
             />
-            <label> Tell us your thoughts!</label>
+            <label> Comments:</label>
             <input
             className="form-control"
             type="text"
-            placeholder="Enter review here ..."
-            value={tableField}
-            onChange={(e) => setTableField(e.target.value)}
+            placeholder="Tell us your thoughts ..."
+            value={reviewField}
+            onChange={(e) => setReviewField(e.target.value)}
             />
-            <button onClick={addReview}>Submit</button>
+            <button onClick={addReview}>Submit Review</button>
             <p>{message}</p>
         </div>
         );
