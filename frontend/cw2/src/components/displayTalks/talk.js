@@ -5,6 +5,7 @@ import Interest from '../interests/interest';
 import Like from '../likes/likes';
 import Itinerary from '../itinerary/itinerary';
 import Review from '../review/review';
+import AverageRating from '../ratings/getAverageRatings';
 
 const Talk = ({talk}) =>{
 
@@ -20,6 +21,7 @@ const Talk = ({talk}) =>{
                         <p>{talk.description}</p>
                             <h6>Your Rating:</h6> 
                             <Stars position={talk.id}/>
+                            <AverageRating ratings = {talk.ratings}/>
                             <div class = "row">
                             <div class = "col-5">
                                 <div class = "col-2">
