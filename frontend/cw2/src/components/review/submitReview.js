@@ -1,41 +1,41 @@
 import React,{ useState, useContext } from "react"
-import { useReview} from "./reviewContext"
 
-const SubmitReview=()=>{
-    const [review, setReview] = useContext(ReviewContext);
+import { useLocalStorage } from "../useLocalStorage";
 
+const SubmitReview=({talkId})=>{
+    const [review, setReview] = useLocalStorage('Review',{});
+    const [nameField, setNameField] = useState("");
+    const [reviewField, setReviewField] = useState("");
+    const[message,setMessage]=useState("");
     const addReview = () => {
-        let newReview = [nameField, reviewField, ...review
-        const reviewString = JSON.stringify(newReview);
-        fetch(`http://localhost:3001/addOrder`, {
-          method: "POST",
-          headers: {
-            Accept: "application/json, text/plain, */*     ",
-            "Content-Type": "application/json",
-          },
-          body: reviewString,
-        })
-        .then(() => {
-            setMessage(
-              "Hi " +
-                nameField +
-                " thank you for reviewing " +talkId+" ."
+        const newReview = {name: nameField, comment: reviewField};
+
+        const currentReviews = review[talkId] || [];
+
+        const updatedReviews = {
+            ...review,
+            [talkId]: [newReview, ...currentReviews], 
+        };
+
+        setReview(updatedReviews);
+
+        setMessage(
+            "Hi " +
+            nameField +
+            " thank you for reviewing this talk."
             );
-            setReview([]);
             setNameField("");
             setReviewField("");
-          })
-        .catch((err) => {
-          console.log(err);
-        });
-      };
+          }
+   
       return (
         <div>
-            <h2>Submit Review</h2>
+            <h5>Review this talk:</h5>
             <label> Name:</label>
             <input
             className="form-control"
             type="text"
+            height="10rm"
             placeholder="Enter your name here ..."
             value={nameField}
             onChange={(e) => setNameField(e.target.value)}
@@ -54,3 +54,4 @@ const SubmitReview=()=>{
         );
     };
     export default SubmitReview;
+ 
