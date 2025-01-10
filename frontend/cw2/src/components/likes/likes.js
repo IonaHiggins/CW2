@@ -9,7 +9,7 @@ export default function Like({talkId}) {
   const inLikes = likedTalk.includes(talkId);
  return(
       <div onClick = {()=>toggleLikedTalk(talkId)}>
-        {inLikes ? <FaHeart color = "red"/>: <FaRegHeart color = "gray"/> }
+        {inLikes ? <FaHeart color = "red" size={25}/>: <FaRegHeart color = "gray" size= {20}/> }
       </div>
  )
 }

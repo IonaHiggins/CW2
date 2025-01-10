@@ -9,7 +9,7 @@ export default function Itinerary({talkId}) {
 
   return (
     <div onClick={() => toggleItineraryTalk(talkId)}>
-      {inItinerary ? <FaRectangleList /> : <FaRegRectangleList />}
+      {inItinerary ? <FaRectangleList size= {25} /> : <FaRegRectangleList size = {20} color = "grey"/>}
     </div>
   );
 }

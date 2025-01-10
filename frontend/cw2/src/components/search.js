@@ -4,7 +4,7 @@ import DisplayTalks from "./displayTalks/displayTalks";
 function Search({details}) {
     const[searchField,setSearchField] = useState("");
     const filtered = details.filter((entry) =>{
-        return entry.title.toLowerCase().includes(searchField.toLowerCase())||entry.description.toLowerCase().includes(searchField.toLowerCase())||entry.speaker.toLowerCase().includes(searchField.toLowerCase());
+        return entry.title.toLowerCase().includes(searchField.toLowerCase())||entry.description.toLowerCase().includes(searchField.toLowerCase())||entry.speaker.toLowerCase().includes(searchField.toLowerCase())||entry.session.toLowerCase().includes(searchField.toLowerCase());
     });
     return(
         <div>

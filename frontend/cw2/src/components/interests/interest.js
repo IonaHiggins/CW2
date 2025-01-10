@@ -9,7 +9,7 @@ export default function Interest({talkId}) {
     
       return (
         <div onClick={() => toggleInterestedTalk(talkId)}>
-          {inInterests ? <HiOutlineLightBulb color= "yellow" /> : <HiOutlineLightBulb color = "gray" />}
+          {inInterests ? <HiOutlineLightBulb color= "yellow" size = {25}/> : <HiOutlineLightBulb color = "gray" size = {20}/>}
         </div>
       );
     }

@@ -9,13 +9,19 @@ export default function GetItinerary({details}) {
     return (
 
       <div>
-        <h2>My Itinerary:</h2>
+        
         {talkDetails.length > 0 ? (
             
-        <ul>
-          {talkDetails.map((talk) => (<li key={talk.id}><h3>{talk.title}</h3><h5>Session {talk.session} - {talk.speaker}</h5><p>{talk.description}</p><hr></hr></li>
-          ))}
-        </ul>
+            <ul>
+            {talkDetails.map((talk) => (<li key={talk.id}>
+              <h2>{talk.title}</h2>
+              <h5> Speaker: {talk.speaker}</h5>
+              <h6> Session: {talk.session} - {talk.time}</h6>
+              <p>{talk.description}</p>
+              <hr></hr>
+              </li>
+            ))}
+          </ul>
         ) : (
             <div>
         <p> Your itinerary is currently empty! Explore our talks and click the icon '<FaRegRectangleList/>'to add a talk to your schedule.</p></div>

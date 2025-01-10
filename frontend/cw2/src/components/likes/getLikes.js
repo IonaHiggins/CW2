@@ -9,11 +9,16 @@ export default function GetLikes({details}) {
     return (
 
       <div>
-        <h2>My Likes:</h2>
         {talkDetails.length > 0 ? (
             
         <ul>
-          {talkDetails.map((talk) => (<li key={talk.id}><h3>{talk.title}</h3><h5>Session {talk.session} - {talk.speaker}</h5><p>{talk.description}</p><hr></hr></li>
+          {talkDetails.map((talk) => (<li key={talk.id}>
+            <h2>{talk.title}</h2>
+            <h5> Speaker: {talk.speaker}</h5>
+            <h6> Session: {talk.session} - {talk.time}</h6>
+            <p>{talk.description}</p>
+            <hr></hr>
+            </li>
           ))}
         </ul>
         ) : (

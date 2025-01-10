@@ -7,6 +7,8 @@ const DisplayProgramme = () => {
     if (status === "fetched")
       return (
         <div>
+          <h2>Convention Programme:</h2>
+          <hr></hr>
             <Search details = {talks}/>
         </div>
       );
